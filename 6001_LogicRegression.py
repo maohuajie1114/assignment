@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import kagglehub
 import pandas as pd
 import numpy as np
@@ -12,6 +18,10 @@ import os
 path = kagglehub.dataset_download("suchintikasarkar/sentiment-analysis-for-mental-health")
 
 print("Path to dataset files:", path)
+
+
+# In[ ]:
+
 
 file_name = "Combined Data.csv"
 file_path = os.path.join(path, file_name)
@@ -50,6 +60,10 @@ except FileNotFoundError:
     print(f"\nError: File not found at {file_path}. Please check the downloaded path and file name.")
 except Exception as e:
     print(f"\nAn error occurred during data loading: {e}")
+
+
+# In[ ]:
+
 
 # --- 1. Load Data ---
 
@@ -174,3 +188,4 @@ Y_pred = lr_model.predict(X_test)
 
 print("\n--- Evaluation Results (Logistic Regression with GPT-2 Features) ---")
 print(classification_report(Y_test, Y_pred, target_names=le.classes_))
+
