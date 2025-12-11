@@ -2,6 +2,6 @@
 
 Use the following command to convert .ipynb to .py
 
-`console
+```commandline
 jupyter nbconvert --to python {file_name}
-`
+```
